@@ -10,6 +10,7 @@ import { defaultTheme } from './styles/themes/default'
 
 import { GlobalStyle } from './styles/global'
 import { Router } from './router/Router'
+import { CyclesContextProvider } from './context/CyclesContext'
 
 export function App() {
   // eslint-disable-next-line no-unused-vars
@@ -18,7 +19,9 @@ export function App() {
   return (
     <ThemeProvider theme={defaultTheme}>
       <BrowserRouter>
-        <Router />
+        <CyclesContextProvider>
+          <Router />
+        </CyclesContextProvider>
       </BrowserRouter>
       <GlobalStyle />
     </ThemeProvider>
